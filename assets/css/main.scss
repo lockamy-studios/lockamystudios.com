@@ -1,0 +1,682 @@
+---
+---
+@use "tokens" as *;
+
+// ─────────────────────────────────────────────────────────────────────────────
+// RESET & BASE
+// ─────────────────────────────────────────────────────────────────────────────
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-body;
+  font-weight: 300;
+  background-color: $warm-white;
+  color: $ink;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-display;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+p { line-height: 1.8; }
+
+a {
+  color: $sage-500;
+  text-decoration: none;
+  transition: color $duration-mid $easing;
+  &:hover { color: $sage-400; }
+}
+
+img { display: block; max-width: 100%; }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// NAVIGATION
+// ─────────────────────────────────────────────────────────────────────────────
+
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 56px;
+  background-color: rgba($warm-white, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid $stone-200;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: $space-5;
+  padding: 0 $space-6;
+
+  .logo {
+    font-family: $font-display;
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: $ink;
+    display: flex;
+    align-items: center;
+    gap: $space-2;
+    text-decoration: none;
+
+    &:hover { color: $ink; }
+
+    .logo-tab {
+      display: inline-block;
+      width: 28px;
+      height: 10px;
+      background-color: $golden-tab;
+      border-radius: $radius-pill;
+      opacity: 0.8;
+      flex-shrink: 0;
+      animation: breathe $duration-breathe $easing infinite alternate;
+    }
+  }
+
+  .nav-spacer { flex: 1; }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: $space-5;
+
+    a {
+      color: $stone-600;
+      font-family: $font-body;
+      font-size: 0.875rem;
+      font-weight: 400;
+      text-decoration: none;
+      transition: color $duration-mid $easing;
+      &:hover { color: $ink; }
+    }
+  }
+
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px $space-4;
+    background-color: $ink;
+    color: $warm-white !important;
+    border-radius: $radius-pill;
+    font-size: 0.8rem !important;
+    font-weight: 500 !important;
+    transition: background-color $duration-mid $easing, transform $duration-mid $easing !important;
+
+    &:hover {
+      background-color: $stone-700 !important;
+      transform: translateY(-1px);
+    }
+  }
+}
+
+@keyframes breathe {
+  from { opacity: 0.6; }
+  to   { opacity: 1.0; }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// LAYOUT CONTAINER
+// ─────────────────────────────────────────────────────────────────────────────
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 $space-6;
+
+  @media (max-width: 768px) {
+    padding: 0 $space-4;
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// HERO
+// ─────────────────────────────────────────────────────────────────────────────
+
+.hero {
+  padding-top: calc(56px + $space-10);
+  padding-bottom: $space-10;
+  position: relative;
+  overflow: hidden;
+
+  // Subtle grain texture
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.025'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container { position: relative; z-index: 1; }
+
+  .hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: $space-3;
+    margin-bottom: $space-5;
+
+    .eyebrow-tab {
+      display: inline-block;
+      width: 56px;
+      height: 14px;
+      background-color: $golden-tab;
+      border-radius: $radius-pill;
+      opacity: 0.75;
+    }
+
+    span {
+      font-size: 0.65rem;
+      font-family: $font-body;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: $stone-400;
+    }
+  }
+
+  h1 {
+    font-size: clamp(2.8rem, 6vw, 5.5rem);
+    color: $ink;
+    max-width: 760px;
+    margin-bottom: $space-5;
+    line-height: 1.1;
+
+    em {
+      font-style: normal;
+      color: $stone-500;
+    }
+  }
+
+  .hero-sub {
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: $stone-600;
+    max-width: 520px;
+    line-height: 1.85;
+    margin-bottom: $space-7;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: $space-4;
+    flex-wrap: wrap;
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// BUTTONS
+// ─────────────────────────────────────────────────────────────────────────────
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-2;
+  padding: $space-3 $space-5;
+  border-radius: $radius-pill;
+  font-family: $font-body;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all $duration-mid $easing;
+  border: none;
+  cursor: pointer;
+
+  &-primary {
+    background-color: $ink;
+    color: $warm-white;
+    &:hover {
+      background-color: $stone-700;
+      color: $warm-white;
+      transform: translateY(-2px);
+      box-shadow: $shadow-md;
+    }
+  }
+
+  &-ghost {
+    background-color: transparent;
+    color: $stone-600;
+    border: 1px solid $stone-200;
+    &:hover {
+      background-color: $stone-100;
+      color: $ink;
+      border-color: $stone-300;
+    }
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// SECTION STRUCTURE
+// ─────────────────────────────────────────────────────────────────────────────
+
+.section {
+  padding: $space-10 0;
+
+  &--alt {
+    background-color: $stone-50;
+  }
+
+  .section-header {
+    margin-bottom: $space-8;
+
+    .section-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: $space-3;
+      margin-bottom: $space-4;
+
+      .eyebrow-tab {
+        display: inline-block;
+        width: 20px;
+        height: 7px;
+        background-color: $golden-tab;
+        border-radius: $radius-pill;
+        opacity: 0.7;
+      }
+
+      span {
+        font-size: 0.65rem;
+        font-family: $font-body;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+        color: $stone-400;
+      }
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      color: $ink;
+      margin-bottom: $space-3;
+    }
+
+    p {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: $stone-600;
+      max-width: 480px;
+      line-height: 1.8;
+    }
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// PHILOSOPHY / VALUES
+// ─────────────────────────────────────────────────────────────────────────────
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: $space-4;
+  margin-top: $space-6;
+}
+
+.value-pill {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  padding: $space-4 $space-5;
+  background-color: $warm-white;
+  border: 1px solid $stone-200;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-sm;
+
+  .value-dot {
+    width: 8px;
+    height: 8px;
+    background-color: $sage-200;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  span {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: $stone-600;
+    letter-spacing: 0.02em;
+  }
+}
+
+.philosophy-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-8;
+  align-items: start;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: $space-6;
+  }
+
+  .philosophy-text {
+    p {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: $stone-600;
+      line-height: 1.85;
+      margin-bottom: $space-4;
+
+      strong {
+        color: $ink;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// PROJECT CARDS
+// ─────────────────────────────────────────────────────────────────────────────
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $space-4;
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 580px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.project-card {
+  background-color: $warm-white;
+  border: 1px solid $stone-200;
+  border-radius: $radius-lg;
+  padding: $space-6;
+  box-shadow: $shadow-sm;
+  transition: box-shadow $duration-slow $easing, transform $duration-slow $easing;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  // Golden tab corner motif
+  &::before {
+    content: '';
+    position: absolute;
+    top: $space-3;
+    left: $space-3;
+    width: 22px;
+    height: 7px;
+    background-color: $golden-tab;
+    border-radius: $radius-pill;
+    opacity: 0.55;
+    transition: opacity $duration-slow $easing;
+  }
+
+  &:hover {
+    box-shadow: $shadow-lg;
+    transform: translateY(-4px);
+
+    &::before { opacity: 0.9; }
+  }
+
+  .card-header {
+    margin-bottom: $space-3;
+    padding-top: $space-2; // clear the golden tab
+  }
+
+  .card-name {
+    font-family: $font-display;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: $ink;
+    margin-bottom: 2px;
+  }
+
+  .card-tagline {
+    font-size: 0.8rem;
+    font-family: $font-body;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $stone-400;
+  }
+
+  .card-description {
+    font-size: 0.925rem;
+    font-weight: 300;
+    color: $stone-600;
+    line-height: 1.75;
+    flex: 1;
+    margin-bottom: $space-5;
+  }
+
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: $space-2;
+  }
+
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-1;
+
+    .tag {
+      font-size: 0.7rem;
+      font-family: $font-mono;
+      color: $stone-500;
+      background-color: $stone-100;
+      border-radius: $radius-sm;
+      padding: 2px 8px;
+    }
+  }
+
+  .card-status {
+    font-size: 0.65rem;
+    font-family: $font-body;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: $sage-400;
+    }
+
+    &.experimental::before { background-color: $stone-300; }
+
+    color: $stone-400;
+  }
+
+  .card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: $sage-500;
+    margin-top: $space-3;
+    text-decoration: none;
+    transition: color $duration-mid $easing, gap $duration-mid $easing;
+
+    &:hover {
+      color: $sage-400;
+      gap: 8px;
+    }
+
+    svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// CONTACT
+// ─────────────────────────────────────────────────────────────────────────────
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-10;
+  align-items: start;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: $space-8;
+  }
+}
+
+.contact-intro {
+  p {
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: $stone-600;
+    line-height: 1.85;
+    margin-bottom: $space-4;
+  }
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+  margin-top: $space-5;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  padding: $space-4 $space-5;
+  background-color: $warm-white;
+  border: 1px solid $stone-200;
+  border-radius: $radius-md;
+  color: $stone-600;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 400;
+  transition: all $duration-mid $easing;
+
+  svg { width: 18px; height: 18px; flex-shrink: 0; color: $stone-400; }
+
+  &:hover {
+    border-color: $stone-300;
+    color: $ink;
+    box-shadow: $shadow-sm;
+    transform: translateX(3px);
+  }
+
+  .link-label { flex: 1; }
+  .link-value { font-family: $font-mono; font-size: 0.8rem; color: $stone-400; }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// DIVIDER
+// ─────────────────────────────────────────────────────────────────────────────
+
+.section-divider {
+  border: none;
+  border-top: 1px solid $stone-200;
+  margin: 0;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// FOOTER
+// ─────────────────────────────────────────────────────────────────────────────
+
+.footer {
+  padding: $space-7 0;
+  border-top: 1px solid $stone-200;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $space-4;
+    flex-wrap: wrap;
+  }
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: $space-2;
+    font-family: $font-display;
+    font-size: 0.95rem;
+    color: $stone-500;
+    text-decoration: none;
+
+    .logo-tab {
+      display: inline-block;
+      width: 18px;
+      height: 7px;
+      background-color: $golden-tab;
+      border-radius: $radius-pill;
+      opacity: 0.6;
+    }
+  }
+
+  .footer-meta {
+    font-size: 0.75rem;
+    font-family: $font-mono;
+    color: $stone-400;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: $space-5;
+
+    a {
+      font-size: 0.8rem;
+      color: $stone-400;
+      text-decoration: none;
+      &:hover { color: $stone-600; }
+    }
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// PAGE ENTRY ANIMATION
+// ─────────────────────────────────────────────────────────────────────────────
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero .hero-eyebrow { animation: fadeUp $duration-zen $easing both; }
+.hero h1           { animation: fadeUp $duration-zen $easing $duration-fast both; }
+.hero .hero-sub    { animation: fadeUp $duration-zen $easing 200ms both; }
+.hero .hero-actions{ animation: fadeUp $duration-zen $easing 280ms both; }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// REDUCED MOTION
+// ─────────────────────────────────────────────────────────────────────────────
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,26 @@
+title: Lockamy Studios
+email: dj@lockamystudios.com
+description: >-
+  Independent technology studio building tools that disappear into the work.
+  Based in Cary, NC.
+baseurl: ""
+url: "https://lockamystudios.com"
+github_username: dlockamy
+
+# Build settings
+plugins:
+  - jekyll-feed
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/
+  - CONTEXT.md
+  - "*.sh"

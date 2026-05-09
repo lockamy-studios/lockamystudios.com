@@ -1,0 +1,66 @@
+// Digital Zen Design System Tokens
+// Lockamy Studios — lockamystudios.com
+
+// ─── Fonts ────────────────────────────────────────────────────────────────────
+$font-display: 'Fraunces', serif;
+$font-body:    'DM Sans', sans-serif;
+$font-mono:    'IBM Plex Mono', monospace;
+
+// ─── Stone Neutrals ───────────────────────────────────────────────────────────
+$warm-white: #FDFCFA;
+$stone-50:   #FAF9F7;
+$stone-100:  #F2EFE9;
+$stone-200:  #E5E0D8;
+$stone-300:  #CCC5B9;
+$stone-400:  #A89E8E;
+$stone-500:  #7D7168;
+$stone-600:  #5A5049;
+$stone-700:  #3D3630;
+$ink:        #1E1A16;
+$stone-900:  #161310;
+
+// ─── Accent ───────────────────────────────────────────────────────────────────
+$sage-500:    #4D7D44;
+$sage-400:    #6D9E63;
+$sage-200:    #C8DBC1;
+$golden-tab:  #F5C842;
+$golden-dark: #C9A020;
+
+// ─── Semantic ─────────────────────────────────────────────────────────────────
+$success:  $sage-500;
+$warning:  #E67E22;
+$error:    #C0392B;
+$inactive: $stone-300;
+
+// ─── Border Radius ────────────────────────────────────────────────────────────
+$radius-sm:   8px;
+$radius-md:   14px;
+$radius-lg:   22px;
+$radius-xl:   32px;
+$radius-pill: 999px;
+
+// ─── Spacing (base-4) ─────────────────────────────────────────────────────────
+$space-1:  4px;
+$space-2:  8px;
+$space-3:  12px;
+$space-4:  16px;
+$space-5:  24px;
+$space-6:  32px;
+$space-7:  48px;
+$space-8:  64px;
+$space-9:  96px;
+$space-10: 128px;
+
+// ─── Shadows ──────────────────────────────────────────────────────────────────
+$shadow-sm: 0 1px 3px rgba(30,26,22,0.06), 0 1px 2px rgba(30,26,22,0.04);
+$shadow-md: 0 4px 16px rgba(30,26,22,0.07), 0 2px 6px rgba(30,26,22,0.05);
+$shadow-lg: 0 12px 40px rgba(30,26,22,0.09), 0 4px 12px rgba(30,26,22,0.06);
+$shadow-xl: 0 24px 64px rgba(30,26,22,0.12), 0 8px 20px rgba(30,26,22,0.07);
+
+// ─── Motion ───────────────────────────────────────────────────────────────────
+$duration-fast:    150ms;
+$duration-mid:     250ms;
+$duration-slow:    400ms;
+$duration-zen:     600ms;
+$duration-breathe: 4000ms;
+$easing: cubic-bezier(0.4, 0, 0.2, 1);

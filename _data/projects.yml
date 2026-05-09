@@ -1,0 +1,50 @@
+# Projects data — lockamystudios.com
+# Each entry renders as a card in the Work section.
+
+- id: thunderhead
+  name: Thunderhead
+  tagline: Edge compute server
+  description: A self-hosted edge compute platform designed for low-latency local inference and media processing. Built for the infrastructure that lives between your hardware and the cloud.
+  tags: [Edge, Compute, Infra]
+  status: active
+  url: https://github.com/thunderhead-systems
+
+- id: bitchain
+  name: Bitchain
+  tagline: Binary versioning CLI
+  description: A Rust-based CLI for deterministic binary versioning. Tracks build artifacts with content-addressed hashing and a human-readable chain of custody.
+  tags: [Rust, CLI, DevTools]
+  status: active
+  url: https://github.com/dlockamy/bitchain
+
+- id: refraction
+  name: Refraction
+  tagline: Light bending through data
+  description: An experimental data visualization layer that renders pipeline state as spatial geometry. Currently in early research.
+  tags: [Visualization, Research]
+  status: experimental
+  url:
+
+- id: digital-zen
+  name: Digital Zen
+  tagline: Shared design language
+  description: The design system underlying every Lockamy Studios surface — web, desktop OS, TV OS, mobile, and embedded. Natural palette, deliberate motion, no sharp corners.
+  tags: [Design System, Jekyll, SCSS]
+  status: active
+  url: https://lockamy-studios.github.io/digital-zen
+
+- id: spec-up
+  name: Spec-Up
+  tagline: Specification tooling
+  description: Tooling for writing, publishing, and versioning technical specifications. Built with Miette Lewis as a practical layer on top of Markdown.
+  tags: [Tooling, Markdown, Specs]
+  status: active
+  url: https://github.com/lockamy-studios/spec-up
+
+- id: pogo-pops
+  name: Pogo Pops
+  tagline: Physical product line
+  description: A line of physical components and collectibles at the intersection of maker culture and product design. Ships from Cary, NC.
+  tags: [Physical, Product, Maker]
+  status: active
+  url:
