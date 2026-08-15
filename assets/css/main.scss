@@ -376,6 +376,388 @@ img { display: block; max-width: 100%; }
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
+// KITS SECTION
+// ─────────────────────────────────────────────────────────────────────────────
+
+.kits-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $space-6;
+  margin-bottom: $space-8;
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: $ink;
+    margin-bottom: $space-4;
+  }
+}
+
+.kit-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+
+  li {
+    padding: $space-4;
+    background-color: $warm-white;
+    border: 1px solid $stone-200;
+    border-radius: $radius-md;
+    transition: all $duration-mid $easing;
+
+    &:hover {
+      border-color: $sage-200;
+      box-shadow: $shadow-sm;
+      transform: translateY(-2px);
+    }
+
+    strong {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: $ink;
+      margin-bottom: $space-2;
+    }
+
+    p {
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: $stone-600;
+      line-height: 1.7;
+      margin: 0;
+    }
+  }
+}
+
+.kits-reference {
+  padding: $space-5;
+  background-color: $stone-50;
+  border-radius: $radius-md;
+  border: 1px solid $stone-200;
+  font-size: 0.95rem;
+  color: $stone-600;
+
+  code {
+    font-family: $font-mono;
+    background-color: $warm-white;
+    padding: 2px 6px;
+    border-radius: $radius-sm;
+    font-size: 0.8rem;
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// DESIGN SYSTEM SECTION
+// ─────────────────────────────────────────────────────────────────────────────
+
+.design-body {
+  max-width: 800px;
+}
+
+.design-content {
+  p {
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: $stone-600;
+    line-height: 1.85;
+    margin-bottom: $space-5;
+
+    strong {
+      color: $ink;
+      font-weight: 500;
+    }
+  }
+
+  h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: $ink;
+    margin-top: $space-6;
+    margin-bottom: $space-3;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: $space-5;
+
+    li {
+      padding: $space-2 0 $space-2 $space-5;
+      color: $stone-600;
+      line-height: 1.8;
+      position: relative;
+
+      &::before {
+        content: '•';
+        position: absolute;
+        left: 0;
+        color: $sage-300;
+        font-weight: bold;
+      }
+
+      strong {
+        color: $ink;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .btn {
+    margin-top: $space-5;
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// DEVELOPER RESOURCES
+// ─────────────────────────────────────────────────────────────────────────────
+
+.dev-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $space-4;
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dev-card {
+  background-color: $warm-white;
+  border: 1px solid $stone-200;
+  border-radius: $radius-lg;
+  padding: $space-5;
+  transition: all $duration-mid $easing;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: $space-3;
+    left: $space-3;
+    width: 16px;
+    height: 6px;
+    background-color: $golden-tab;
+    border-radius: $radius-pill;
+    opacity: 0.55;
+    transition: opacity $duration-mid $easing;
+  }
+
+  &:hover {
+    border-color: $sage-200;
+    box-shadow: $shadow-md;
+    transform: translateY(-4px);
+
+    &::before { opacity: 0.9; }
+  }
+
+  h3 {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: $ink;
+    margin-bottom: $space-3;
+    margin-top: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  p {
+    flex: 1;
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: $stone-600;
+    line-height: 1.75;
+    margin-bottom: $space-4;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: $sage-500;
+    text-decoration: none;
+    transition: color $duration-mid $easing, gap $duration-mid $easing;
+    position: relative;
+    z-index: 1;
+
+    &:hover {
+      color: $sage-400;
+      gap: 8px;
+    }
+
+    svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// OPEN SOURCE TOOLS
+// ─────────────────────────────────────────────────────────────────────────────
+
+.tools-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $space-5;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tool-item {
+  padding: $space-5;
+  background-color: $warm-white;
+  border: 1px solid $stone-200;
+  border-radius: $radius-lg;
+  transition: all $duration-mid $easing;
+
+  &:hover {
+    border-color: $sage-200;
+    box-shadow: $shadow-md;
+    transform: translateY(-2px);
+  }
+
+  h3 {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: $ink;
+    margin-bottom: $space-3;
+    margin-top: 0;
+  }
+
+  p {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: $stone-600;
+    line-height: 1.75;
+    margin-bottom: $space-3;
+  }
+
+  .tool-link {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: $sage-500;
+    text-decoration: none;
+    transition: color $duration-mid $easing;
+
+    &:hover {
+      color: $sage-400;
+    }
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// SERVICES & INTEGRATIONS
+// ─────────────────────────────────────────────────────────────────────────────
+
+.services-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-8;
+  max-width: 900px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: $space-6;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: $ink;
+    margin-bottom: $space-4;
+  }
+}
+
+.services-column {
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      padding: $space-3 0;
+      color: $stone-600;
+      border-bottom: 1px solid $stone-100;
+      font-size: 0.95rem;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  p {
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: $stone-600;
+    line-height: 1.8;
+    margin-bottom: $space-4;
+  }
+
+  .btn {
+    margin-top: $space-3;
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// PRODUCT LINKS (in About section)
+// ─────────────────────────────────────────────────────────────────────────────
+
+.product-links {
+  margin-top: $space-8;
+  padding-top: $space-6;
+  border-top: 1px solid $stone-200;
+
+  h3 {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: $ink;
+    margin-bottom: $space-3;
+  }
+
+  p {
+    font-size: 0.95rem;
+    color: $stone-600;
+
+    a {
+      color: $sage-500;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color $duration-mid $easing;
+
+      &:hover {
+        color: $sage-400;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
 // PROJECT CARDS
 // ─────────────────────────────────────────────────────────────────────────────
 

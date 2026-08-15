@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Lockamy Studios
-description: Independent technology studio building tools that disappear into the work. Based in Cary, NC.
+description: Public developer and creative infrastructure layer for Lockamy Inc. Kits, design systems, developer resources, and open-source tools.
 ---
 
 <!-- ═══════════════════════════════════════════════════════════════ HERO ══ -->
@@ -9,68 +9,273 @@ description: Independent technology studio building tools that disappear into th
   <div class="container">
     <div class="hero-eyebrow">
       <span class="eyebrow-tab"></span>
-      <span>Lockamy Studios · Cary, NC</span>
+      <span>Lockamy Studios</span>
     </div>
 
-    <h1>Technology<br>that <em>disappears.</em></h1>
+    <h1>Developer tools &amp;<br>design infrastructure.</h1>
 
     <p class="hero-sub">
-      An independent studio building embedded systems, edge infrastructure,
-      and developer tools. We make the machine quiet enough to hear the work.
+      Public developer and creative layer for Lockamy Inc. Reusable kits,
+      design systems, protocol specifications, and open-source infrastructure
+      for household computing and beyond.
     </p>
 
     <div class="hero-actions">
-      <a href="#work" class="btn btn-primary">See the work</a>
-      <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      <a href="#kits" class="btn btn-primary">Explore Kits</a>
+      <a href="#design" class="btn btn-ghost">Design System</a>
     </div>
   </div>
 </section>
 
 <hr class="section-divider">
 
-<!-- ══════════════════════════════════════════════════════════════ WORK ══ -->
-<section class="section" id="work">
+<!-- ═══════════════════════════════════════════════════════════════ KITS ══ -->
+<section class="section" id="kits">
   <div class="container">
     <div class="section-header">
       <div class="section-eyebrow">
         <span class="eyebrow-tab"></span>
-        <span>Work</span>
+        <span>Kits</span>
       </div>
-      <h2>Current projects</h2>
-      <p>Tools built for real constraints — hardware, latency, longevity.</p>
+      <h2>Reusable building blocks</h2>
+      <p>Eleven libraries that power Lockamy products. Designed for composition and real-world constraints.</p>
     </div>
 
-    <div class="projects-grid">
-      {% for project in site.data.projects %}
-      <div class="project-card">
-        <div class="card-header">
-          <div class="card-name">{{ project.name }}</div>
-          <div class="card-tagline">{{ project.tagline }}</div>
-        </div>
+    <div class="kits-columns">
+      <div class="kits-column">
+        <h3>Infrastructure &amp; Platform</h3>
+        <ul class="kit-list">
+          <li>
+            <strong>Platform Kit</strong>
+            <p>Core infrastructure abstractions, service discovery, and lifecycle management.</p>
+          </li>
+          <li>
+            <strong>Device Kit</strong>
+            <p>Hardware abstraction layer for device control, inventory, and management.</p>
+          </li>
+          <li>
+            <strong>Service Kit</strong>
+            <p>Household service definitions, capabilities, and integration patterns.</p>
+          </li>
+          <li>
+            <strong>Storage Kit</strong>
+            <p>Data persistence, querying, and consistency for local and cloud backends.</p>
+          </li>
+        </ul>
+      </div>
 
-        <p class="card-description">{{ project.description }}</p>
+      <div class="kits-column">
+        <h3>Messaging &amp; Communication</h3>
+        <ul class="kit-list">
+          <li>
+            <strong>Fabric Kit</strong>
+            <p>Messaging layer for pub/sub, RPC, and event streaming across the household.</p>
+          </li>
+          <li>
+            <strong>Identity Kit</strong>
+            <p>Authentication, authorization, and capability-based access control.</p>
+          </li>
+        </ul>
+      </div>
 
-        <div class="card-footer">
-          <div class="card-tags">
-            {% for tag in project.tags %}
-            <span class="tag">{{ tag }}</span>
-            {% endfor %}
-          </div>
-          <span class="card-status {% if project.status == 'experimental' %}experimental{% endif %}">
-            {{ project.status }}
-          </span>
-        </div>
+      <div class="kits-column">
+        <h3>User Experience &amp; Developer Tools</h3>
+        <ul class="kit-list">
+          <li>
+            <strong>Design Kit</strong>
+            <p>Flutter component library implementing Digital Zen across mobile and desktop.</p>
+          </li>
+          <li>
+            <strong>App Store Kit</strong>
+            <p>Application discovery, installation, and sandboxing for household app marketplaces.</p>
+          </li>
+          <li>
+            <strong>Score Kit</strong>
+            <p>Metrics collection, aggregation, and insight generation for product analytics.</p>
+          </li>
+          <li>
+            <strong>Spec Kit</strong>
+            <p>Technical specification tooling and specification-as-code workflow.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
 
-        {% if project.url and project.url != "" %}
-        <a href="{{ project.url }}" target="_blank" rel="noopener" class="card-link">
-          View project
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <div class="kits-reference">
+      <p>All kits are <strong>Apache-2.0 licensed</strong> and available on GitHub. See documentation at <code>lockamystudios.com/kits</code>.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ════════════════════════════════════════════════════════ DESIGN SYSTEM ══ -->
+<section class="section section--alt" id="design">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">
+        <span class="eyebrow-tab"></span>
+        <span>Design</span>
+      </div>
+      <h2>Digital Zen</h2>
+      <p>Unified design language across all Lockamy surfaces.</p>
+    </div>
+
+    <div class="design-body">
+      <div class="design-content">
+        <p>
+          <strong>Digital Zen</strong> is Lockamy Inc.'s design system — a cohesive visual and interaction language that spans web, mobile, desktop, TV OS, and embedded interfaces.
+        </p>
+
+        <h3>Core Elements</h3>
+        <ul>
+          <li><strong>Design Tokens:</strong> Color palette (stone neutrals, sage green, golden accent), typography (Fraunces / DM Sans / IBM Plex Mono), spacing, and timing</li>
+          <li><strong>Component Library:</strong> Built for Flutter, SCSS, and Rust. Parity contracts ensure consistency across all renderers</li>
+          <li><strong>Accessibility:</strong> WCAG 2.1 AA minimum, keyboard navigation, screen reader support</li>
+          <li><strong>Brand Guidelines:</strong> Usage rules, voice &amp; tone, motion principles</li>
+        </ul>
+
+        <p>
+          The design system is not decoration. When the surface is calm, the work can be loud.
+        </p>
+
+        <a href="https://lockamy-studios.github.io/digital-zen" target="_blank" rel="noopener" class="btn btn-primary">
+          View Digital Zen
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline; margin-left: 0.5em;">
             <path d="M5 12h14M12 5l7 7-7 7"/>
           </svg>
         </a>
-        {% endif %}
       </div>
-      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ═══════════════════════════════════════════════════ DEVELOPER RESOURCES ══ -->
+<section class="section" id="dev">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">
+        <span class="eyebrow-tab"></span>
+        <span>Developers</span>
+      </div>
+      <h2>Documentation &amp; APIs</h2>
+      <p>Everything you need to build on Lockamy.</p>
+    </div>
+
+    <div class="dev-grid">
+      <div class="dev-card">
+        <h3>Hearth Protocol</h3>
+        <p>Open, federation-friendly wire protocol for household computing. Multi-client, offline-capable, end-to-end encrypted.</p>
+        <a href="#" target="_blank" rel="noopener" class="card-link">Read the spec</a>
+      </div>
+
+      <div class="dev-card">
+        <h3>API Reference</h3>
+        <p>Complete API documentation for all kits. Request/response contracts, error handling, and version compatibility.</p>
+        <a href="#" target="_blank" rel="noopener" class="card-link">Browse APIs</a>
+      </div>
+
+      <div class="dev-card">
+        <h3>Integration Guides</h3>
+        <p>How to integrate third-party services. MCP patterns, webhook contracts, and capability gating.</p>
+        <a href="#" target="_blank" rel="noopener" class="card-link">Integration docs</a>
+      </div>
+
+      <div class="dev-card">
+        <h3>SDKs &amp; Bindings</h3>
+        <p>Language bindings for Rust (primary), Dart/Flutter, Go, and gRPC/Protobuf. Always up-to-date with the wire format.</p>
+        <a href="#" target="_blank" rel="noopener" class="card-link">Download SDKs</a>
+      </div>
+
+      <div class="dev-card">
+        <h3>Tutorials &amp; Examples</h3>
+        <p>Step-by-step guides and working code examples. Build your first app, device, or service in minutes.</p>
+        <a href="#" target="_blank" rel="noopener" class="card-link">Get started</a>
+      </div>
+
+      <div class="dev-card">
+        <h3>Best Practices</h3>
+        <p>Performance, security, and reliability patterns proven in production. Design decisions explained.</p>
+        <a href="#" target="_blank" rel="noopener" class="card-link">Read guides</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ═══════════════════════════════════════════════════════ OPEN SOURCE ══ -->
+<section class="section section--alt" id="tools">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">
+        <span class="eyebrow-tab"></span>
+        <span>Tools</span>
+      </div>
+      <h2>Open-source utilities</h2>
+      <p>Developer tools built in the open. Used internally, shipped with care.</p>
+    </div>
+
+    <div class="tools-list">
+      <div class="tool-item">
+        <h3>kit-docgen</h3>
+        <p>Documentation generator for kit boilerplate. Converts Rust type signatures and comments into searchable API reference.</p>
+        <a href="https://github.com/lockamy-studios/kit-docgen" target="_blank" rel="noopener" class="tool-link">GitHub →</a>
+      </div>
+
+      <div class="tool-item">
+        <h3>bulk-git</h3>
+        <p>Batch git operations across repositories. Useful for coordinating changes across the kit ecosystem.</p>
+        <a href="https://github.com/softsurve/sol/tree/main/scripts/bulk-git" target="_blank" rel="noopener" class="tool-link">GitHub →</a>
+      </div>
+
+      <div class="tool-item">
+        <h3>vault-sync</h3>
+        <p>Git submodule synchronization and management. Keeps shared context and specs in sync across repos.</p>
+        <a href="https://github.com/dlockamy/vault" target="_blank" rel="noopener" class="tool-link">GitHub →</a>
+      </div>
+
+      <div class="tool-item">
+        <h3>Spec-Up</h3>
+        <p>Specification authoring and management application. Quote-to-ship workflow with embedded decision tracking.</p>
+        <a href="https://github.com/lockamy-studios/spec-up" target="_blank" rel="noopener" class="tool-link">GitHub →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ═════════════════════════════════════════════════ SERVICES &amp; INTEGRATIONS ══ -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">
+        <span class="eyebrow-tab"></span>
+        <span>Services</span>
+      </div>
+      <h2>Third-party integrations</h2>
+      <p>Connect your favorite services to the household. Community-maintained patterns and official integrations.</p>
+    </div>
+
+    <div class="services-columns">
+      <div class="services-column">
+        <h3>Official Integrations</h3>
+        <ul>
+          <li>Jellyfin (media library)</li>
+          <li>Home Assistant (smart home)</li>
+          <li>Nextcloud (file sync)</li>
+          <li>Matrix (decentralized chat)</li>
+        </ul>
+      </div>
+
+      <div class="services-column">
+        <h3>Community Extensions</h3>
+        <p>Submit your integration to the community registry. All integrations follow the same MCP capability contract.</p>
+        <a href="#" class="btn btn-ghost">Submit an integration</a>
+      </div>
     </div>
   </div>
 </section>
@@ -85,28 +290,22 @@ description: Independent technology studio building tools that disappear into th
         <span class="eyebrow-tab"></span>
         <span>About</span>
       </div>
-      <h2>Studio philosophy</h2>
+      <h2>Our role</h2>
     </div>
 
     <div class="philosophy-body">
       <div class="philosophy-text">
         <p>
-          Lockamy Studios is a one-person engineering studio founded by
-          <strong>DJ Lockamy</strong> in Cary, NC. The work spans embedded
-          operating systems, edge compute infrastructure, developer tooling,
-          and design systems — usually somewhere between the hardware and the
-          human.
+          <strong>Lockamy Studios</strong> is the public developer and creative infrastructure layer for <strong>Lockamy Inc.</strong>, a household computing company building consumer products, hardware appliances, and developer tools. Founded by <strong>Douglas Lockamy</strong> in Cary, NC.
         </p>
         <p>
-          The guiding principle is <strong>earned complexity</strong>: software
-          should be only as complicated as the problem demands, and no more.
-          Every layer of abstraction should be worth the cost of the mystery
-          it creates.
+          This site hosts the design systems, reusable kits, protocol specifications, and open-source utilities that power all Lockamy products. Everything here is licensed Apache-2.0 (code) or CC-BY-4.0 (specs/docs) and available for independent use.
         </p>
         <p>
-          Digital Zen — the design language across all studio products — exists
-          because the interface is part of the tool. When the surface is calm,
-          the work can be loud.
+          Our work spans embedded operating systems, edge compute infrastructure, messaging protocols, household services, and developer tooling — usually somewhere between the hardware and the human.
+        </p>
+        <p>
+          The guiding principle is <strong>earned complexity</strong>: software should be only as complicated as the problem demands, and no more. Every layer of abstraction should be worth the cost of the mystery it creates. When the surface is calm, the work can be loud.
         </p>
       </div>
 
@@ -137,6 +336,15 @@ description: Independent technology studio building tools that disappear into th
         </div>
       </div>
     </div>
+
+    <div class="product-links">
+      <h3>Lockamy Inc. Products</h3>
+      <p>
+        <a href="https://quickring.me" target="_blank" rel="noopener">Quickring</a> —
+        <a href="https://thunderhead.systems" target="_blank" rel="noopener">Thunderhead</a> —
+        <a href="https://slashbuilder.com" target="_blank" rel="noopener">SlashBuilder</a>
+      </p>
+    </div>
   </div>
 </section>
 
@@ -150,48 +358,50 @@ description: Independent technology studio building tools that disappear into th
         <span class="eyebrow-tab"></span>
         <span>Contact</span>
       </div>
-      <h2>Let's build something</h2>
+      <h2>Questions? Let's talk.</h2>
     </div>
 
     <div class="contact-layout">
       <div class="contact-intro">
         <p>
-          Open to collaboration on infrastructure tooling, embedded systems,
-          and design system work. Also happy to talk shop on edge compute,
-          Rust, or anything maker-adjacent.
+          Questions about using the kits, integrating with Lockamy services, or building on the Hearth protocol?
+          We're here to help.
         </p>
         <p>
-          Response time is measured in days, not hours — this is intentional.
+          For product questions, contact the individual product teams at Quickring, Thunderhead, or SlashBuilder.
+        </p>
+        <p>
+          Response time is measured in days, not hours — this is intentional and allows us to give thoughtful answers.
         </p>
       </div>
 
       <div class="contact-links">
-        <a href="mailto:dj@lockamystudios.com" class="contact-link">
+        <a href="mailto:support@lockamystudios.com" class="contact-link">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <rect x="2" y="4" width="20" height="16" rx="2"/>
             <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
           </svg>
           <span class="link-label">Email</span>
-          <span class="link-value">dj@lockamystudios.com</span>
+          <span class="link-value">support@lockamystudios.com</span>
         </a>
 
-        <a href="https://github.com/dlockamy" target="_blank" rel="noopener" class="contact-link">
+        <a href="https://github.com/lockamy-studios" target="_blank" rel="noopener" class="contact-link">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
             <path d="M9 18c-4.51 2-5-2-7-2"/>
           </svg>
           <span class="link-label">GitHub</span>
-          <span class="link-value">dlockamy</span>
+          <span class="link-value">lockamy-studios</span>
         </a>
 
-        <a href="https://dlockamy.com" target="_blank" rel="noopener" class="contact-link">
+        <a href="https://lockamy.io" target="_blank" rel="noopener" class="contact-link">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"/>
             <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
             <path d="M2 12h20"/>
           </svg>
-          <span class="link-label">Portfolio</span>
-          <span class="link-value">dlockamy.com</span>
+          <span class="link-label">Main site</span>
+          <span class="link-value">lockamy.io</span>
         </a>
       </div>
     </div>
