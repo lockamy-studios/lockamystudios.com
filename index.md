@@ -38,71 +38,82 @@ description: Public developer and creative infrastructure layer for Lockamy Inc.
         <span>Kits</span>
       </div>
       <h2>Reusable building blocks</h2>
-      <p>Eleven libraries that power Lockamy products. Designed for composition and real-world constraints.</p>
+      <p>Twelve libraries that power Lockamy products, grouped by how tightly each one depends on the household box itself — not by team or product. Designed for composition and real-world constraints. Eight of the twelve are real, working code today; the remaining four — the board- and hardware-specific ones — are still early scaffolding.</p>
     </div>
 
     <div class="kits-columns">
       <div class="kits-column">
-        <h3>Infrastructure &amp; Platform</h3>
+        <h3>Runs anywhere</h3>
+        <p>No special hardware or OS required — build against these from any client.</p>
         <ul class="kit-list">
           <li>
-            <strong>Platform Kit</strong>
-            <p>Core infrastructure abstractions, service discovery, and lifecycle management.</p>
-          </li>
-          <li>
-            <strong>Device Kit</strong>
-            <p>Hardware abstraction layer for device control, inventory, and management.</p>
-          </li>
-          <li>
-            <strong>Service Kit</strong>
-            <p>Household service definitions, capabilities, and integration patterns.</p>
-          </li>
-          <li>
-            <strong>Storage Kit</strong>
-            <p>Data persistence, querying, and consistency for local and cloud backends.</p>
-          </li>
-        </ul>
-      </div>
-
-      <div class="kits-column">
-        <h3>Messaging &amp; Communication</h3>
-        <ul class="kit-list">
-          <li>
-            <strong>Fabric Kit</strong>
-            <p>Messaging layer for pub/sub, RPC, and event streaming across the household.</p>
+            <strong>Spec Kit</strong>
+            <p>Specification methodology and the conformance-testing harness every other kit is checked against.</p>
           </li>
           <li>
             <strong>Identity Kit</strong>
-            <p>Authentication, authorization, and capability-based access control.</p>
+            <p>Accounts, household relationships, authentication, and capability-based authorization — the trust primitives every household service builds on.</p>
+          </li>
+          <li>
+            <strong>Service Kit</strong>
+            <p>The shared service foundation: request handling, logging, configuration, and observability, so services don't reinvent the plumbing.</p>
+          </li>
+          <li>
+            <strong>Design Kit</strong>
+            <p>Digital Zen, the studio's design system, packaged for Flutter — tokens, typography, and the Golden Tab accent, ready to drop into any household app.</p>
+          </li>
+          <li>
+            <strong>Fabric Kit</strong>
+            <p>The brand-neutral SDK behind Quickring's fabric — publish/subscribe messaging, scene state, family-graph sync, and device pairing.</p>
+          </li>
+          <li>
+            <strong>Score Kit</strong>
+            <p>The conductor framework that governs how a household device behaves and sounds — capability declarations, notification discipline, and the studio's Sonic Signature. <em>Early-stage scaffold.</em></p>
           </li>
         </ul>
       </div>
 
       <div class="kits-column">
-        <h3>User Experience &amp; Developer Tools</h3>
+        <h3>Bridges to the box</h3>
+        <p>A portable core anyone can build against, plus a small binding that talks to the household box.</p>
         <ul class="kit-list">
           <li>
-            <strong>Design Kit</strong>
-            <p>Flutter component library implementing Digital Zen across mobile and desktop.</p>
+            <strong>Storage Kit</strong>
+            <p>Content-addressed block storage and manifest primitives — the core of bitchain — portable everywhere, with a binding for storage on the household box.</p>
+          </li>
+          <li>
+            <strong>Message Kit</strong>
+            <p>The message envelope and request/response grammar every service speaks, plus the local delivery layer that runs on the household box.</p>
           </li>
           <li>
             <strong>App Store Kit</strong>
-            <p>Application discovery, installation, and sandboxing for household app marketplaces.</p>
+            <p>Installing and verifying apps on a household device: manifests, signing, and the capability gate that decides what an app can touch. <em>Early-stage scaffold.</em></p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="kits-column">
+        <h3>Lives on the box</h3>
+        <p>Only runs on the household's own Linux machine — the container, board, and device layer.</p>
+        <ul class="kit-list">
+          <li>
+            <strong>Substrate Kit</strong>
+            <p>The board-agnostic container and process layer a household box runs on — any Docker-capable Linux machine, not just Lockamy-built hardware.</p>
           </li>
           <li>
-            <strong>Score Kit</strong>
-            <p>Metrics collection, aggregation, and insight generation for product analytics.</p>
+            <strong>Platform Kit</strong>
+            <p>Board bring-up for the studio's reference hardware families — Aether (Raspberry Pi 5) and Forge (AMD64 micro-ATX). <em>Early-stage scaffold.</em></p>
           </li>
           <li>
-            <strong>Spec Kit</strong>
-            <p>Technical specification tooling and specification-as-code workflow.</p>
+            <strong>Device Kit</strong>
+            <p>Hardware abstractions — display, audio, input, sensors — for the reference hardware. <em>Early-stage scaffold.</em></p>
           </li>
         </ul>
       </div>
     </div>
 
     <div class="kits-reference">
-      <p>All kits are <strong>Apache-2.0 licensed</strong> and available on GitHub. See documentation at <code>lockamystudios.com/kits</code>.</p>
+      <p>Apache-2.0 licensed. Kits are published to GitHub as each one reaches beta-readiness and completes a full code review — not all twelve are public yet. Hearth, the protocol several of these kits implement, already is.</p>
     </div>
   </div>
 </section>
@@ -168,7 +179,7 @@ description: Public developer and creative infrastructure layer for Lockamy Inc.
       <div class="dev-card">
         <h3>Hearth Protocol</h3>
         <p>Open, federation-friendly wire protocol for household computing. Multi-client, offline-capable, end-to-end encrypted.</p>
-        <a href="#" target="_blank" rel="noopener" class="card-link">Read the spec</a>
+        <a href="https://github.com/slash-builder/hearth/blob/main/docs/protocol.md" target="_blank" rel="noopener" class="card-link">Read the spec</a>
       </div>
 
       <div class="dev-card">
@@ -235,12 +246,6 @@ description: Public developer and creative infrastructure layer for Lockamy Inc.
         <h3>vault-sync</h3>
         <p>Git submodule synchronization and management. Keeps shared context and specs in sync across repos.</p>
         <a href="https://github.com/dlockamy/vault" target="_blank" rel="noopener" class="tool-link">GitHub →</a>
-      </div>
-
-      <div class="tool-item">
-        <h3>Spec-Up</h3>
-        <p>Specification authoring and management application. Quote-to-ship workflow with embedded decision tracking.</p>
-        <a href="https://github.com/lockamy-studios/spec-up" target="_blank" rel="noopener" class="tool-link">GitHub →</a>
       </div>
     </div>
   </div>
@@ -341,7 +346,6 @@ description: Public developer and creative infrastructure layer for Lockamy Inc.
       <h3>Lockamy Inc. Products</h3>
       <p>
         <a href="https://quickring.me" target="_blank" rel="noopener">Quickring</a> —
-        <a href="https://thunderhead.systems" target="_blank" rel="noopener">Thunderhead</a> —
         <a href="https://slashbuilder.com" target="_blank" rel="noopener">SlashBuilder</a>
       </p>
     </div>
