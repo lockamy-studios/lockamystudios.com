@@ -1062,3 +1062,42 @@ img { display: block; max-width: 100%; }
     transition-duration: 0.01ms !important;
   }
 }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// LEGAL / LONG-FORM TEXT (privacy policy)
+// ─────────────────────────────────────────────────────────────────────────────
+
+.legal {
+  max-width: 720px;
+
+  h3 {
+    font-size: 1.25rem;
+    color: $ink;
+    margin: $space-8 0 $space-3;
+  }
+
+  p, li {
+    font-size: 1.02rem;
+    font-weight: 300;
+    color: $stone-600;
+    line-height: 1.8;
+  }
+
+  p { margin-bottom: $space-4; }
+
+  ul {
+    margin: 0 0 $space-4;
+    padding-left: $space-6;
+  }
+
+  li { margin-bottom: $space-3; }
+
+  strong { font-weight: 500; color: $ink; }
+
+  a {
+    color: $ink;
+    text-decoration: underline;
+    text-decoration-color: $golden-tab;
+    text-underline-offset: 3px;
+  }
+}
